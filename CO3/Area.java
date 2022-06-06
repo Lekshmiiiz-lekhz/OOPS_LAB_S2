@@ -1,53 +1,35 @@
-import java.io.*;
 import java.util.*;
-class Area 
+class Area
 {
-  void findarea(int a, int b)
+  void calculateArea(int x)
   {
-    System.out.println("\nArea of rectangle with breadth "+a+" and length "+b+"is:" +a*b);
+     System.out.println("Area of the square:"+x*x+"sq units");
   }
-  void findarea(int a)
+  void calculateArea(float x,  float y)
   {
-    System.out.println("\nArea of circle with radius "+a+" is: "+3.14*a);
+     System.out.println("Area of the rectangle:"+x*y+"sq units");
   }
-  void findarea(int a, int b, int c)
+   void calculateArea(double r)
   {
-    double temp = (a + b + c);
-    double s=temp/2;
-    double triarea = Math.sqrt(s*(s-a)*(s-b)*(s-c));
-    System.out.println("\n Area of triangle with legth of sides "+a+","+b+" and "+c+" is:"+triarea);
+     double area = 3.14*r*r;
+     System.out.println("Area of circle: "+area+" sq units");
   }
-  public static void main(String p[]) throws IOException
- {
-    Scanner c=new Scanner(System.in);
-    Area d= new Area();
-    System.out.println("\n Find area of \n 1. Rectangle \n 2. Triangle \n 3. Circle \n\n Select a choice:");
-    int choice = c.nextInt();
-    switch(choice)
-     {
-       case 1:
-         System.out.print("\n Enter the breadth:");
-         int b = c.nextInt();
-         System.out.print("\n Enter the length:");
-         int I =c.nextInt();
-         d.findarea(b,I);
-         break;
-      case 2:
-           System.out.print("\n Enter the length of first side:");
-           int l1 = c.nextInt();
-           System.out.print("\n Enter the length of second side:");
-           int l2 = c.nextInt();
-           System.out.print("\n Enter the length of third side:");
-           int l3 = c.nextInt();
-           d.findarea(l1,l2,l3);
-           break;
-       case 3:
-          System.out.print("\n Enter the radius:");
-          int r= c.nextInt();
-          d.findarea(r);
-          break;
-       default:
-          System.out.println("Invalid choice"); 
-     }
- }
+  public static void main(String args[])
+   {
+      int s;
+      float l,b;
+      double r;
+      Area obj = new Area();
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter the side of square");
+      s=sc.nextInt();
+      System.out.println("Enter the length and breadth of a rectangle");
+      l=sc.nextFloat();
+      b=sc.nextFloat();
+      System.out.println("Enter the radius of the circle");
+      r=sc.nextDouble();
+      obj.calculateArea(s);
+      obj.calculateArea(l,b);
+      obj.calculateArea(r);
+  }
 }
